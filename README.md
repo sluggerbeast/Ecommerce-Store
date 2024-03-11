@@ -1,8 +1,14 @@
-# React + Vite
+# Simple Ecommerce Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A basic e-commerce store application built using React and Redux. This application demonstrates essential e-commerce features, such as adding products, viewing product details, and managing a shopping cart.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Listing:** View a list of available products, with essential details.
+- **Product Details:** Access detailed information about each product, including images, descriptions, and specifications.
+- **Add to Cart:** Easily add products to your shopping cart with a single click.
+- **Shopping Cart Management:** View and manage the products in your shopping cart, including updating quantities and removing items.
+
+## Technologies Used
+
+- **React:** A popular JavaScript library for building user interfaces.
