@@ -13,14 +13,14 @@ function CartItems({ id, productName, price, quantity, onCartEdit }) {
       key={id}
       className="border-t-[1px] last:border-b-[1px]  border-black bg-slate-100 mb-0 w-full p-2 py-4 pr-4 pl-4 flex flex-row"
     >
-      <div className=" w-[100px] bg-red-300">
+      <div className=" hidden sm:block w-[100px]">
         <img src="https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg" alt="" />
       </div>
-      <div className="flex flex-col justify-between ml-4 w-full ">
+      <div className="flex flex-col sm:justify-between ml-4 w-full ">
         <span>
-          {id} {productName}
+          {id}  {productName}
         </span>
-        <div className="flex flex-row justify-between items-center my-2">
+        <div className="flex flex-col sm:flex-row justify-between items-center my-2">
           <div>
             <span>
               Price : <i class="fa fa-inr mr-1" />

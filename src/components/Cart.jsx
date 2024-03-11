@@ -12,7 +12,7 @@ const Cart = forwardRef(function Cart({ cartList,onCartEdit }, ref) {
     <>
       <div
         ref={ref}
-        className="hidden h-full w-[45vw] lg:w-[30vw] z-30 bg-slate-200 fixed right-0"
+        className="hidden h-full w-[50vw] sm:w-[45vw] lg:w-[30vw] z-30 bg-white fixed right-0 shadow-lg"
       >
         <button
           className="relative hover:scale-125 md:right-[-39vw] lg:right-[-28vw] right-[-38vw] top-1"

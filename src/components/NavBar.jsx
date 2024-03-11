@@ -12,16 +12,17 @@ function NavBar({cartSize,CartRef}) {
     <>
       <nav className="bg-gray-800 h-[60px] text-white flex justify-between items-center p-4 fixed w-full z-10">
         <Link to="/" class="text-xl font-bold">
-          Store<i class="fa fa-space-shuttle ml-2" aria-hidden="true"></i>
+          Store<i class="fa fa-space-shuttle my-3"></i>
         </Link>
 
         <div>
-          <input type="text" className="p-1 pl-2 w-[30vw] md:w-[20vw] rounded-s-lg text-black focus:outline-none" placeholder="Search for products..." />
-          <button className="p-1 w-[5em] bg-indigo-500 rounded-r-lg text-white hover:bg-blue-700 focus:outline-none">search</button>
+          <input type="text" className="lg:p-1 pl-2 w-[30vw] lg:w-[25vw] rounded-s-lg text-black focus:outline-none" placeholder="Search for products..." />
+          <button className="lg:p-1 px-1  sm:w-[10vw] rounded-r-lg md:w-[10vw] lg:w-[5vw] bg-indigo-500 lg:rounded-r-lg text-white hover:bg-blue-700 focus:outline-none"><i class="fa fa-search"/>
+</button>
         </div>
 
         <ul class="flex space-x-4 px-2">
-          <li>
+          <li className="hidden sm:block">
             <Link to="/" class="hover:text-gray-400">
               Page
             </Link>

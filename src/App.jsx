@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useContext,createContext, useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
@@ -9,9 +9,11 @@ import Checkout from "./pages/Checkout.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./components/Cart.jsx";
 import Account from "./pages/Account.jsx";
+export const totList = createContext()
 
 function App() {
   const CartRef = useRef();
+  
   const initialList = [
     {
       id: 1,
@@ -20,6 +22,21 @@ function App() {
       imgLink:
         "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       category: "watch",
+      rating:3.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 2,
@@ -28,6 +45,21 @@ function App() {
       imgLink:
         "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
       category: "drinks",
+      rating:1.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 3,
@@ -36,6 +68,21 @@ function App() {
       imgLink:
         "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
       category: "watch",
+      rating:2.3,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 4,
@@ -44,6 +91,21 @@ function App() {
       imgLink:
         "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       category: "watch",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 5,
@@ -52,6 +114,21 @@ function App() {
       imgLink:
         "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       category: "watch",
+      rating:4,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 6,
@@ -60,6 +137,21 @@ function App() {
       imgLink:
         "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
       category: "drinks",
+      rating:3.4,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 7,
@@ -68,6 +160,21 @@ function App() {
       imgLink:
         "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
       category: "watch",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 8,
@@ -76,6 +183,21 @@ function App() {
       imgLink:
         "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
       category: "drinks",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 9,
@@ -84,6 +206,21 @@ function App() {
       imgLink:
         "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       category: "watch",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 10,
@@ -92,6 +229,21 @@ function App() {
       imgLink:
         "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
       category: "drinks",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 11,
@@ -100,6 +252,21 @@ function App() {
       imgLink:
         "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
       category: "toy",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
     {
       id: 12,
@@ -108,11 +275,27 @@ function App() {
       imgLink:
         "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
       category: "drinks",
+      rating:4.6,
+      comments:[
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
+        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+     ],
+     images:[
+      
+      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
+      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
+      
+    ]
     },
   ];
 
   const [productList, setProductList] = useState([...initialList]);
   const [cartList, setCartList] = useState([]);
+
 
   function getTotalCartItems() {
     let tot = 0;
@@ -173,6 +356,7 @@ function App() {
 
   return (
     <>
+      <totList.Provider value={productList}>
       <div>
         <NavBar cartSize={getTotalCartItems} CartRef={CartRef} />
         <Cart ref={CartRef} onCartEdit={handleCartEdit} cartList={cartList} />
@@ -189,10 +373,11 @@ function App() {
             />
           }
         />
-        <Route path="/checkout" element={<Checkout onCartEdit={handleCartEdit} cartList={cartList} />} />
+        <Route path="/checkout" element={<Checkout onCartEdit={handleCartEdit} cartList={cartList} CartRef={CartRef} productList={productList} />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/products/:prodid" element={<ProductPage productList={productList} />} />
+        <Route path="/products/:prodid" element={<ProductPage  onCartEdit={handleCartEdit} cartList={cartList} onCartAdd={handleAddCart} productList={productList} />} />
       </Routes>
+      </totList.Provider>
     </>
   );
 }

@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CartItems from "../components/CartItems";
 
 ///{id:1,productName:"Watch", price:"10",category:""}
-export default function Checkout({ cartList, onCartEdit }) {
+export default function Checkout({ cartList, onCartEdit,CartRef }) {
   let totalCost = 0;
   console.log(cartList);
+  useEffect(()=>{
+    CartRef.current.style.display = "none";
+  },[])
   return (
     <>
       <div className="pt-[75px] flex flex-col items-center">

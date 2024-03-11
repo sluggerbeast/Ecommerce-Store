@@ -8,7 +8,7 @@ export default function HomePage({onCart,productList,cartList,onCartEdit}){
     <>
     <div className='flex flex-wrap justify-center lg:justify-start w-full px-4 bg-slate-50 min-h-screen h-fit pt-[4em]' >
     {productList.map((prod)=>(
-      <Product key={prod.id} onCartEdit={onCartEdit} price={prod.price} productName={prod.productName} imgLink={prod.imgLink} id={prod.id} onCartAdd={onCart} cartList={cartList} />
+      <Product key={prod.id} onCartEdit={onCartEdit} price={prod.price} productName={prod.productName} imgLink={prod.imgLink} id={prod.id} onCartAdd={onCart} cartList={cartList} rating={prod.rating} />
     ))}
     </div>
     
