@@ -17,6 +17,7 @@ function Product({
   const handleProductClick = () => {
     navigate(`/products/${id}`); // Replace '/about' with your target path
   };
+  
   function handleAddToCart() {
     let temp = cartList.filter((item) => item.id === id); /// this variable checks if the item exists in cart or not;
     if (temp.length <= 0) {
@@ -29,7 +30,7 @@ function Product({
 
   return (
     <>
-      <div className="p-3 m-5 bg-indigo-100 h-fit  lg:h-[70vh] w-fit rounded">
+      <div className="p-3 m-5 bg-slate-100 h-fit  lg:h-[70vh] w-fit rounded">
         <div onClick={handleProductClick}>
           <p>{id}</p>
           <div className="w-[300px] h-[300px] bg-white overflow-hidden">

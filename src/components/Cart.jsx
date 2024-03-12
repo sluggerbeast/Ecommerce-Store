@@ -36,7 +36,7 @@ const Cart = forwardRef(function Cart({ cartList,onCartEdit }, ref) {
           </div>}
           {cartList.length>0 ? <div className="w-full p-3">
             <Link to='/checkout'>  <button className="bg-red-300 w-full p-3 rounded-sm">
-              Checkout ${totalCost}
+              Checkout <i className="fa fa-inr mr-1"></i>{totalCost}
             </button>
             </Link>
           </div>:

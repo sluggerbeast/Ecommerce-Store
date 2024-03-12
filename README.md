@@ -2,6 +2,10 @@
 
 A basic e-commerce store application built using React and Redux. This application demonstrates essential e-commerce features, such as adding products, viewing product details, and managing a shopping cart.
 
+## URL
+
+https://[pareekstore.netlify.com]
+
 ## Features
 
 - **Product Listing:** View a list of available products, with essential details.

@@ -17,12 +17,12 @@ function App() {
   const initialList = [
     {
       id: 1,
-      productName: "Watch",
-      price: "10",
+      productName: "Echo Dot 3rd Gen",
+      price: "2200",
       imgLink:
-        "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      category: "watch",
-      rating:3.6,
+        "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
+      category: "echo",
+      rating:4.6,
       comments:[
         {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
         {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
@@ -31,7 +31,7 @@ function App() {
      ],
      images:[
       
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
+      "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
       "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
       "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
       "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",

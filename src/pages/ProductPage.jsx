@@ -4,6 +4,7 @@ import Review from "../components/Review";
 import Stars from "../components/Stars";
 import { totList } from "../App";
 import Accordion from "../components/Accordion";
+import RandProduct from "../components/RandProduct";
 
 function ProductPage({ productList, onCartEdit, cartList, onCartAdd }) {
   const { prodid } = useParams();
@@ -83,6 +84,7 @@ function ProductPage({ productList, onCartEdit, cartList, onCartAdd }) {
         </div>
         
       </div>
+      <RandProduct />
       <Review rating={product.rating} reviews={product.comments} />
     </>
   );

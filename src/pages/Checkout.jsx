@@ -31,7 +31,7 @@ export default function Checkout({ cartList, onCartEdit,CartRef }) {
         {cartList.length>0 && <div className="bg-slate-50 w-[70vw] lg:w-[50vw] pt-3 ">
           <div className="pb-3">Total: <i className="fa fa-inr mr-1" />{totalCost}</div>
           <button className="bg-black text-white p-3 w-[70vw] lg:w-[50vw]">
-            Pay
+            Pay <i className="fa fa-inr mr-1 ml-1" />{totalCost}
           </button>
         </div>}
       </div>
