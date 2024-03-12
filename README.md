@@ -4,7 +4,7 @@ A basic e-commerce store application built using React and Redux. This applicati
 
 ## URL
 
-https://[pareekstore.netlify.com]
+https://pareekstore.netlify.com
 
 ## Features
 
