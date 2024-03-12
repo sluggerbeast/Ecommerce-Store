@@ -10,11 +10,11 @@ export default function Checkout({ cartList, onCartEdit,CartRef }) {
   },[])
   return (
     <>
-      <div className="pt-[75px] flex flex-col items-center">
+      <div className="pt-[5px] flex flex-col items-center">
         <h1>
           <strong>Checkout</strong>
         </h1>
-        <div className="w-[70vw] lg:w-[50vw] max-h-[70vh] overflow-y-scroll">
+        <div className="w-[70vw] mt-2 lg:w-[50vw] max-h-[70vh] overflow-y-scroll">
           {cartList.map((item) => {
             totalCost += item.price * item.quantity;
             return (

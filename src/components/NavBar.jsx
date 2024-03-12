@@ -11,6 +11,7 @@ function NavBar({cartSize,CartRef}) {
   return (
     <>
       <nav className="bg-gray-800 h-[60px] text-white flex justify-between items-center p-4 fixed w-full z-10">
+        
         <Link to="/" class="text-xl font-bold">
           Store<i class="fa fa-space-shuttle my-3"></i>
         </Link>
@@ -42,6 +43,7 @@ function NavBar({cartSize,CartRef}) {
           </li>
         </ul>
       </nav>
+      <nav className="bg-gray-100 h-[60px] text-white  w-full"></nav>
     </>
   );
 }

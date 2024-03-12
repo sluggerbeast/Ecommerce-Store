@@ -43,7 +43,7 @@ function ProductPage({ productList, onCartEdit, cartList, onCartAdd }) {
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row bg-white pt-[60px] h-[100vh] md:max-h-[100vh] ">
+      <div className="flex flex-col sm:flex-row bg-white h-[100vh] md:max-h-[100vh] ">
         <div className="w-0 hidden sm:block lg:flex-[10%]  h-[70vh] overflow-scroll">
           <div className="bg-white h-fit border-2 border-black m-1 ">
             {imageList.map((item) => (

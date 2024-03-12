@@ -9,6 +9,7 @@ import Checkout from "./pages/Checkout.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./components/Cart.jsx";
 import Account from "./pages/Account.jsx";
+import ComingSoon from "./pages/ComingSoon.jsx";
 export const totList = createContext()
 
 function App() {
@@ -376,6 +377,7 @@ function App() {
         <Route path="/checkout" element={<Checkout onCartEdit={handleCartEdit} cartList={cartList} CartRef={CartRef} productList={productList} />} />
         <Route path="/account" element={<Account />} />
         <Route path="/products/:prodid" element={<ProductPage  onCartEdit={handleCartEdit} cartList={cartList} onCartAdd={handleAddCart} productList={productList} />} />
+        <Route path="/*" element={<ComingSoon />} />
       </Routes>
       </totList.Provider>
     </>
