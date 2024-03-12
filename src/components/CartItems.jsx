@@ -1,12 +1,17 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { totList } from "../App.jsx";
 function CartItems({ id, productName, price, quantity, onCartEdit }) {
+  const  productList = useContext(totList);
+
   function handleRemove() {
     onCartEdit(id, "minus");
   }
   function handleAdd() {
     onCartEdit(id, "add");
   }
+  const product = productList.filter(
+    (item) => parseInt(item.id) === parseInt(id)
+  )[0];
 
   return (
     <div
@@ -14,7 +19,7 @@ function CartItems({ id, productName, price, quantity, onCartEdit }) {
       className="border-t-[1px] last:border-b-[1px]  border-black bg-slate-100 mb-0 w-full p-2 py-4 pr-4 pl-4 flex flex-row"
     >
       <div className=" hidden sm:block w-[100px]">
-        <img src="https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg" alt="" />
+        <img src={product.imgLink} alt="" />
       </div>
       <div className="flex flex-col sm:justify-between ml-4 w-full ">
         <span>

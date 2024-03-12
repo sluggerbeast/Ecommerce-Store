@@ -26,7 +26,7 @@ const Cart = forwardRef(function Cart({ cartList,onCartEdit }, ref) {
               <h1>Cart</h1>
             </strong>
           </span>}
-          {cartList.length>0 && <div className=" max-h-[80vh] w-full overflow-y-scroll ">
+          {cartList.length>0 && <div className=" max-h-[70vh] w-full overflow-y-scroll ">
           {cartList.map((item) => {
             totalCost += item.price * item.quantity;
             return (

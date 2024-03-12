@@ -1,6 +1,7 @@
-import { useContext,createContext, useRef, useState } from "react";
+import { useContext, createContext, useRef, useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import { initialList } from "./func.js";
 
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
@@ -10,293 +11,58 @@ import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./components/Cart.jsx";
 import Account from "./pages/Account.jsx";
 import ComingSoon from "./pages/ComingSoon.jsx";
-export const totList = createContext()
+export const totList = createContext();
 
 function App() {
   const CartRef = useRef();
-  
-  const initialList = [
-    {
-      id: 1,
-      productName: "Echo Dot 3rd Gen",
-      price: "2200",
-      imgLink:
-        "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      category: "echo",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 2,
-      productName: "Soda Can",
-      price: "18",
-      imgLink:
-        "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
-      category: "drinks",
-      rating:1.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 3,
-      productName: "cube",
-      price: "50",
-      imgLink:
-        "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
-      category: "watch",
-      rating:2.3,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 4,
-      productName: "Watch",
-      price: "100",
-      imgLink:
-        "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      category: "watch",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 5,
-      productName: "Watch",
-      price: "10",
-      imgLink:
-        "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      category: "watch",
-      rating:4,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 6,
-      productName: "Soda Can",
-      price: "113",
-      imgLink:
-        "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
-      category: "drinks",
-      rating:3.4,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 7,
-      productName: "cube",
-      price: "50",
-      imgLink:
-        "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
-      category: "watch",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 8,
-      productName: "Soda Can",
-      price: "120",
-      imgLink:
-        "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
-      category: "drinks",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 9,
-      productName: "Watch",
-      price: "50",
-      imgLink:
-        "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      category: "watch",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 10,
-      productName: "Soda Can",
-      price: "90",
-      imgLink:
-        "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
-      category: "drinks",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 11,
-      productName: "cube",
-      price: "50",
-      imgLink:
-        "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
-      category: "toy",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-    {
-      id: 12,
-      productName: "Soda Can",
-      price: "70",
-      imgLink:
-        "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
-      category: "drinks",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/ffffff?text=Product 3",
-      
-    ]
-    },
-  ];
 
-  const [productList, setProductList] = useState([...initialList]);
+  const [productList, setProductList] = useState(initialList);
   const [cartList, setCartList] = useState([]);
 
+  useEffect(() => {
+    fetch("https://dummyjson.com/products?limit=30")
+      .then((res) => res.json())
+      .then((res) => {
+        setProductList(
+          res.products.map((item) => ({
+            id: item.id,
+            productName: item.title,
+            price: item.price,
+            imgLink: item.thumbnail,
+            category: item.category,
+            rating: item.rating,
+            comments: [
+              {
+                name: "Saurabh",
+                rating: 4.5,
+                review: "It is a great product",
+                userId: "",
+              },
+              {
+                name: "Saurabh",
+                rating: 3.5,
+                review: "It is a great product",
+                userId: "",
+              },
+              {
+                name: "Saurabh",
+                rating: 4.5,
+                review: "It is a great product",
+                userId: "",
+              },
+              {
+                name: "Saurabh",
+                rating: 5,
+                review: "It is a great product",
+                userId: "",
+              },
+            ],
+            images: [...item.images],
+          }))
+        );
+      });
+    //console.log(val);
+  }, []);
 
   function getTotalCartItems() {
     let tot = 0;
@@ -358,27 +124,47 @@ function App() {
   return (
     <>
       <totList.Provider value={productList}>
-      <div>
-        <NavBar cartSize={getTotalCartItems} CartRef={CartRef} />
-        <Cart ref={CartRef} onCartEdit={handleCartEdit} cartList={cartList} />
-      </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              productList={productList}
-              onCart={handleAddCart}
-              cartList={cartList}
-              onCartEdit={handleCartEdit}
-            />
-          }
-        />
-        <Route path="/checkout" element={<Checkout onCartEdit={handleCartEdit} cartList={cartList} CartRef={CartRef} productList={productList} />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/products/:prodid" element={<ProductPage  onCartEdit={handleCartEdit} cartList={cartList} onCartAdd={handleAddCart} productList={productList} />} />
-        <Route path="/*" element={<ComingSoon />} />
-      </Routes>
+        <div>
+          <NavBar cartSize={getTotalCartItems} CartRef={CartRef} />
+          <Cart ref={CartRef} onCartEdit={handleCartEdit} cartList={cartList} />
+        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                productList={productList}
+                onCart={handleAddCart}
+                cartList={cartList}
+                onCartEdit={handleCartEdit}
+              />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <Checkout
+                onCartEdit={handleCartEdit}
+                cartList={cartList}
+                CartRef={CartRef}
+                productList={productList}
+              />
+            }
+          />
+          <Route path="/account" element={<Account />} />
+          <Route
+            path="/products/:prodid"
+            element={
+              <ProductPage
+                onCartEdit={handleCartEdit}
+                cartList={cartList}
+                onCartAdd={handleAddCart}
+                productList={productList}
+              />
+            }
+          />
+          <Route path="/*" element={<ComingSoon />} />
+        </Routes>
       </totList.Provider>
     </>
   );
