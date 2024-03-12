@@ -1,9 +1,9 @@
 import { useContext, createContext, useRef, useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import { initialList } from "./func.js";
+import { findProduct, initialList } from "./func.js";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import Checkout from "./pages/Checkout.jsx";
@@ -20,17 +20,18 @@ function App() {
   const [cartList, setCartList] = useState([]);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=30")
+    fetch("https://dummyjson.com/products?limit=100")
       .then((res) => res.json())
       .then((res) => {
         setProductList(
           res.products.map((item) => ({
-            id: item.id,
+            id: parseInt(item.id),
             productName: item.title,
             price: item.price,
             imgLink: item.thumbnail,
             category: item.category,
             rating: item.rating,
+            description:item.description,
             comments: [
               {
                 name: "Saurabh",
@@ -90,7 +91,7 @@ function App() {
     console.log("item added to cart");
   }
   function handleCartEdit(id, action) {
-    let temp = cartList.filter((item) => item.id === id);
+    let temp = findProduct(cartList,id);
     let quantity = 1;
     quantity = temp[0].quantity;
     if (action === "minus") {
@@ -109,7 +110,7 @@ function App() {
       console.log("cart edit", id, quantity);
       setCartList((prevCart) => {
         return prevCart.map((item) => {
-          if (item.id === id) {
+          if (parseInt(item.id) === parseInt(id)) {
             return { ...item, quantity: quantity };
           } else {
             return item;
@@ -124,6 +125,7 @@ function App() {
   return (
     <>
       <totList.Provider value={productList}>
+       
         <div>
           <NavBar cartSize={getTotalCartItems} CartRef={CartRef} />
           <Cart ref={CartRef} onCartEdit={handleCartEdit} cartList={cartList} />
@@ -165,6 +167,7 @@ function App() {
           />
           <Route path="/*" element={<ComingSoon />} />
         </Routes>
+        
       </totList.Provider>
     </>
   );

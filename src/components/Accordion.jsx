@@ -8,36 +8,43 @@ function AccordionItem({ title, content }) {
   };
 
   return (
-    <div className="">
-      <div
+    <>
+       <div 
+       className="w-full p-1  " 
         
-        className=" p-3 focus:outline-none text-left"
+        // className=" p-[20px] focus:outline-none text-left"
         onClick={toggleAccordion}
         aria-expanded={isOpen}
       >
-        <span> <h3 className="text-lg font-medium">{title}</h3>
-        
-          {isOpen ? 
+       <div className="w-full border-black border-t-2"><span >{title} 
+       {isOpen ? 
              <span class="fa fa-angle-up" />
            : 
             <span  class="fa fa-angle-down"/>
           }
-          </span>
+       
+        </span>
+        {isOpen && <div className="mt-3">{content}</div>}
+        </div>
+        
+          
+          
         
       </div>
-      {isOpen && <div className="p-4">{content}</div>}
-    </div>
+      
+   </>
   );
 }
 
 function Accordion({ items }) {
   return (
-    <div className=" bg-slate-100">
-        
+    
+        <>
       {items.map((item) => (
         <AccordionItem key={item.title} title={item.title} content={item.content} />
       ))}
-    </div>
+      <hr className='w-full ml-1  border-black border-t-2'/>
+    </>
   );
 }
 

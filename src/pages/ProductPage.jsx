@@ -5,6 +5,7 @@ import Stars from "../components/Stars";
 import { totList } from "../App.jsx";
 import Accordion from "../components/Accordion";
 import RandProduct from "../components/RandProduct";
+import { findProduct } from "../func.js";
 
 function ProductPage({ onCartEdit, cartList, onCartAdd }) {
   const { prodid } = useParams();
@@ -15,12 +16,11 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
  
 
   //const  productList = useContext(totList);
-  const product = productList.filter(
-    (item) => parseInt(item.id) === parseInt(prodid)
-  )[0];
+  const product = findProduct(productList,prodid)[0];
   console.log(product, prodid);
   if (product == undefined) {
-    return <div className="pt-[80px] text-center">Product Not Found!</div>;
+    console.log("product undefined")
+    return (<div className="pt-[80px] text-center">Product Not Found!</div>)
   }
 
   const [currentImage, setCurrentImage] = useState(product.imgLink);
@@ -35,11 +35,13 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
 
   }, [prodid]);
   function handleAddItemToCart() {
-    let temp = cartList.filter((item) => item.id === prodid); /// this variable checks if the item exists in cart or not;
+    console.log(cartList);
+    let temp = findProduct(cartList,prodid) /// this variable checks if the item exists in cart or not;
     console.log(temp);
     if (temp.length <= 0) {
       onCartAdd(prodid, product.productName, product.price);
     } else {
+      console.log("here",prodid)
       onCartEdit(prodid, "add");
     }
   }
@@ -76,7 +78,7 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
             ))}
           </div>
         </div>
-        <div className="w-fit max-w-[90%]  lg:flex-[50%] md:max-h-[100vh]  self-center sm:self-auto overflow-hidden">
+        <div className="w-fit max-w-[90%] mt-2  lg:flex-[50%] md:max-h-[100vh]  self-center sm:self-auto overflow-hidden">
           <img src={currentImage} alt="xyz" className="max-w-[100vh]" />
         </div>
         <div className="flex-[60%]  flex flex-col items-center">
@@ -94,19 +96,23 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
             </p>
             <button
               onClick={handleAddItemToCart}
-              className="bg-black text-white p-2 w-[200px]"
+              className="bg-black text-white p-2 w-[200px] mb-3"
             >
               Add to Cart
             </button>
+            
+          <Accordion items={[{title:"Description ",content:product.description},{title:"Description ",content:product.description}]} /> 
           </div>
-          {/* <Accordion items={items} />  */}
+          {/* Description of the prodcut below */}
+          
+           
         </div>
       </div>
-      <RandProduct
+      {product && <RandProduct
         onCartEdit={onCartEdit}
         onCartAdd={onCartAdd}
         cartList={cartList}
-      />
+      />}
       <Review rating={product.rating} reviews={product.comments} />
       
     </>

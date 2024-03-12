@@ -9,8 +9,9 @@ export const handleAddToCart = (id, action = "add") => {
     console.log(cartList);
 }
 
-export const findProduct = () => {
+export const findProduct = (cartList,id) => {
 
+    return cartList.filter((item) => parseInt(item.id) === parseInt(id));
 }
 
 const tell = {

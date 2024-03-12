@@ -3,7 +3,7 @@ import Product from './Product'
 import { totList } from "../App";
 function RandProduct({onCartEdit,onCartAdd,cartList}) {
 
-    let rands = [1,5,7,12];
+    let rands = [8,5,7,12];
     const  productList = useContext(totList);
     let prod = rands.map((item)=>(
 

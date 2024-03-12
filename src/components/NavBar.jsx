@@ -13,7 +13,7 @@ function NavBar({cartSize,CartRef}) {
       <nav className="bg-gray-800 h-[60px] text-white flex justify-between items-center p-4 fixed w-full z-10">
         
         <Link to="/" class="text-xl font-bold">
-          Store<i class="fa fa-space-shuttle my-3"></i>
+          eStore <i class="fa fa-space-shuttle my-3"></i>
         </Link>
 
         <div>
