@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Stars from "./Stars";
 import { findProduct } from "../func";
@@ -14,12 +14,22 @@ function Product({
   rating
 }) {
   const navigate = useNavigate();
-
+  const [cartBtnText,  setCartBtnText] = useState("Add to Cart");
+  const [cartAddedCss, setCartAddedCss]=useState("bg-black");
   const handleProductClick = () => {
     
     navigate(`/products/${id}`);
     //window.location.reload(); // Replace '/about' with your target path
   };
+
+  function CartButtonAni(){
+    setCartAddedCss("bg-blue-800")
+    setCartBtnText("Item Added!");
+    setTimeout(()=>{
+      setCartBtnText("Add to Cart")
+      setCartAddedCss("bg-balck")
+    },1000);
+  }
   
   function handleAddToCart() {
     let temp = findProduct(cartList,id) /// this variable checks if the item exists in cart or not;
@@ -29,6 +39,7 @@ function Product({
       onCartEdit(id, "add");
     }
     console.log(cartList);
+    CartButtonAni();
   }
 
   return (
@@ -56,9 +67,9 @@ function Product({
         </div>
         <button
           onClick={handleAddToCart}
-          className=" w-full text-slate-100  bg-black rounded p-3"
+          className={" w-full text-white bg-black rounded p-3 "+cartAddedCss}
         >
-          Add to Cart
+          {cartBtnText}
         </button>
       </div>
     </>
