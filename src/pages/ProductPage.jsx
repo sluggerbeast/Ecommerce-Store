@@ -6,18 +6,19 @@ import { totList } from "../App.jsx";
 import Accordion from "../components/Accordion";
 import RandProduct from "../components/RandProduct";
 import { findProduct } from "../func.js";
+import AddToCartBtn from "../components/AddToCartBtn.jsx";
 
 function ProductPage({ onCartEdit, cartList, onCartAdd }) {
   const { prodid } = useParams();
   const cimgRef = useRef();
   const refToTop = useRef();
   
-  const  productList = useContext(totList);
+  const  totLis = useContext(totList);
  
 
   //const  productList = useContext(totList);
-  const product = findProduct(productList,prodid)[0];
-  console.log(product, prodid);
+  const product = findProduct(totLis.productList,prodid)[0];
+  //console.log(product, prodid);
   if (product == undefined) {
     console.log("product undefined")
     return (<div className="pt-[80px] text-center">Product Not Found!</div>)
@@ -34,17 +35,17 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
     setCurrentImage(product.imgLink);
 
   }, [prodid]);
-  function handleAddItemToCart() {
-    console.log(cartList);
-    let temp = findProduct(cartList,prodid) /// this variable checks if the item exists in cart or not;
-    console.log(temp);
-    if (temp.length <= 0) {
-      onCartAdd(prodid, product.productName, product.price);
-    } else {
-      console.log("here",prodid)
-      onCartEdit(prodid, "add");
-    }
-  }
+  // function handleAddItemToCart() {
+  //   console.log(cartList);
+  //   let temp = findProduct(cartList,prodid) /// this variable checks if the item exists in cart or not;
+  //   console.log(temp);
+  //   if (temp.length <= 0) {
+  //     onCartAdd(prodid, product.productName, product.price);
+  //   } else {
+  //     console.log("here",prodid)
+  //     onCartEdit(prodid, "add");
+  //   }
+  // }
 
   function handleCurrentImage(item) {
     setCurrentImage(item);
@@ -110,12 +111,13 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
             <p className="mb-4">
               <Stars size="30px" rating={product.rating} />
             </p>
-            <button
+            {/* <button
               onClick={handleAddItemToCart}
               className="bg-black text-white p-2 w-[200px] mb-4"
             >
               Add to Cart
-            </button>
+            </button> */}
+            <AddToCartBtn id={prodid} animate={true} btnText="Add to Cart" onCartEdit={onCartEdit}  className="bg-black text-white p-2 w-[200px] mb-4"/>
             
           <Accordion items={[{title:"Description ",content:product.description},{title:"Description ",content:product.description}]} /> 
           </div>

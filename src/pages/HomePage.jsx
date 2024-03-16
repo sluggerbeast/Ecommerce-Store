@@ -3,7 +3,7 @@ import Product from '../components/Product'
 import Hero from '../components/Hero';
 /// {id:1,productName:"Soda Can", img:"",price:"10",imgLink:"https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",}
 export default function HomePage({onCart,productList,cartList,onCartEdit}){
-  console.log(productList);
+  //console.log(productList);
 
   return (
     <>

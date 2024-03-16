@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Stars from "./Stars";
 import { findProduct } from "../func";
+import AddToCartBtn from "./AddToCartBtn";
 //// {id:1,productName:"Soda Can", img:"",price:"10",imgLink:"https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",}
 function Product({
   imgLink,
@@ -66,12 +67,13 @@ function Product({
             Ratings <Stars rating={rating} />
           </p>
         </div>
-        <button
+        {/* <button
           onClick={handleAddToCart}
           className={" w-full text-white bg-black rounded p-3 "+cartAddedCss}
         >
           {cartBtnText}
-        </button>
+        </button> */}
+        <AddToCartBtn id={id} animate={true} btnText="Add to Cart" onCartEdit={onCartEdit}  className="w-full text-white bg-black rounded p-3 "/>
       </div>
     </>
   );

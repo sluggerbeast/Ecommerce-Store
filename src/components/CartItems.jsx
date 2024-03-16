@@ -1,15 +1,11 @@
 import React, { useContext } from "react";
 import { totList } from "../App.jsx";
+import AddToCartBtn from "./AddToCartBtn.jsx";
 function CartItems({ id, productName, price, quantity, onCartEdit }) {
-  const  productList = useContext(totList);
+  const  totLis = useContext(totList);
 
-  function handleRemove() {
-    onCartEdit(id, "minus");
-  }
-  function handleAdd() {
-    onCartEdit(id, "add");
-  }
-  const product = productList.filter(
+  
+  const product = totLis.productList.filter(
     (item) => parseInt(item.id) === parseInt(id)
   )[0];
 
@@ -33,21 +29,13 @@ function CartItems({ id, productName, price, quantity, onCartEdit }) {
             </span>
           </div>
           <div className="bg-slate-200 border-slate-300 border-[1px]  w-fit overflow-hidden flex items-center justify-center h-[23px] gap-3">
-            <button
-              onClick={handleRemove}
-              className="hover:bg-slate-300 justify-center p-1"
-            >
-              <i class="fa fa-minus" />
-            </button>
+            
+            <AddToCartBtn id={id} action="minus" btnText={<i class="fa fa-minus" />} onCartEdit={onCartEdit}  className="hover:bg-slate-300 justify-center p-1"/>
             <span className="mr-1 ml-1 ">
               <strong>{quantity}</strong>
             </span>
-            <button
-              onClick={handleAdd}
-              className="hover:bg-slate-300 justify-center p-1"
-            >
-              <i class="fa fa-plus" />
-            </button>
+            
+            <AddToCartBtn id={id} action="add" btnText={<i class="fa fa-plus" />} onCartEdit={onCartEdit}  className="hover:bg-slate-300 justify-center p-1"/>
           </div>
         </div>
       </div>

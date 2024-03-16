@@ -1,4 +1,4 @@
-import { useContext, createContext, useRef, useState, useEffect } from "react";
+import { createContext, useRef, useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { findProduct, initialList } from "./func.js";
@@ -27,11 +27,11 @@ function App() {
           res.products.map((item) => ({
             id: parseInt(item.id),
             productName: item.title,
-            price: item.price,
+            price: parseInt(item.price)*80,
             imgLink: item.thumbnail,
             category: item.category,
             rating: item.rating,
-            description:item.description,
+            description: item.description,
             comments: [
               {
                 name: "Saurabh",
@@ -74,15 +74,23 @@ function App() {
     return tot;
   }
 
-  function handleAddCart(id, productName, price, quantity = 1, category = "") {
+  function handleAddCart(
+    id,
+    productName = "som",
+    price = 1,
+    quantity = 1,
+    category = ""
+  ) {
+    const obj = findProduct(productList, id)[0];
+    console.log(obj, "obj");
     setCartList((prev) => {
       return [
         ...prev,
         {
           id: id,
-          productName: productName,
-          price: price,
-          category: category,
+          productName: obj.productName,
+          price: obj.price,
+          category: obj.category,
           quantity: quantity,
         },
       ];
@@ -90,42 +98,47 @@ function App() {
 
     console.log("item added to cart");
   }
-  function handleCartEdit(id, action) {
-    let temp = findProduct(cartList,id);
-    let quantity = 1;
-    quantity = temp[0].quantity;
-    if (action === "minus") {
-      if (quantity >= 1) {
-        quantity--;
+   function handleCartEdit(id, action = "add") {
+    let temp = findProduct(cartList, id);
+    if (temp.length <= 0) { /// This condition is used to add the item to cart for the first time
+      handleAddCart(id);
+    } else { // if reached here means the item already exists in cart and more quantity can be added.
+      let quantity = 1;
+      quantity = temp[0].quantity;
+      if (action === "minus") {
+        if (quantity >= 1) {
+          quantity--;
+        }
       }
-    }
-    if (action === "add") {
-      quantity++;
-    }
-    if (quantity == 0) {
-      setCartList((prevCart) => {
-        return prevCart.filter((item) => item.id !== id);
-      });
-    } else {
-      console.log("cart edit", id, quantity);
-      setCartList((prevCart) => {
-        return prevCart.map((item) => {
-          if (parseInt(item.id) === parseInt(id)) {
-            return { ...item, quantity: quantity };
-          } else {
-            return item;
-          }
-          console.log(item);
+      if (action === "add") {
+        quantity++;
+      }
+      if (quantity == 0) {
+        setCartList((prevCart) => {
+          return prevCart.filter((item) => item.id !== id);
         });
-      });
-      console.log(cartList);
+      } else {
+        console.log("cart edit", id, quantity);
+        setCartList((prevCart) => {
+          return prevCart.map((item) => {
+            if (parseInt(item.id) === parseInt(id)) {
+              return { ...item, quantity: quantity };
+            } else {
+              return item;
+            }
+            console.log(item);
+          });
+        });
+        console.log(cartList);
+      }
     }
   }
 
   return (
     <>
-      <totList.Provider value={productList}>
-       
+      <totList.Provider
+        value={{ productList: productList, cartList: cartList,onCartEdit:handleCartEdit }}
+      >
         <div>
           <NavBar cartSize={getTotalCartItems} CartRef={CartRef} />
           <Cart ref={CartRef} onCartEdit={handleCartEdit} cartList={cartList} />
@@ -167,7 +180,6 @@ function App() {
           />
           <Route path="/*" element={<ComingSoon />} />
         </Routes>
-        
       </totList.Provider>
     </>
   );

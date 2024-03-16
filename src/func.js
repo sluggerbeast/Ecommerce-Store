@@ -1,6 +1,6 @@
 
 export const handleAddToCart = (id, action = "add") => {
-    let temp = cartList.filter((item) => item.id === id); /// this variable checks if the item exists in cart or not;
+    let temp = findProduct(cartList,id); /// this variable checks if the item exists in cart or not;
     if (temp.length <= 0) {
         onCartAdd(id, productName, price);
     } else {
@@ -42,10 +42,10 @@ const tell2 = {
     category: "echo",
     rating:4.6,
     comments:[
-      {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-      {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-      {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-      {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
+      {name: "Nice product", rating: 4.5, review:"It is a great product",userId:""},
+      {name: "Could be better", rating: 3.5, review:"It is a great product",userId:""},
+      {name: "Great", rating: 4.5, review:"It is a great product",userId:""},
+      {name: "wowow", rating: 5, review:"It is a great product",userId:""},
    ],
    images:[
     

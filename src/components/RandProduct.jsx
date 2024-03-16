@@ -4,10 +4,10 @@ import { totList } from "../App";
 function RandProduct({onCartEdit,onCartAdd,cartList}) {
 
     let rands = [8,5,7,12];
-    const  productList = useContext(totList);
+    const totLis  = useContext(totList);
     let prod = rands.map((item)=>(
 
-     productList.filter(e=> e.id=== item)[0]
+      totLis.productList.filter(e=> e.id=== item)[0]
         
     ));
     

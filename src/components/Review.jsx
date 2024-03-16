@@ -30,7 +30,7 @@ function Review({rating,reviews}) {
     }
     function handleSubmitReview(e){
         e.preventDefault();
-        setInitReviews(prev=>[...prev,{name:reviewName.current.value,rating:3.2,review:reviewText.current.value}])
+        setInitReviews(prev=>[{name:reviewName.current.value,rating:3.2,review:reviewText.current.value},...prev])
         setWriteReview(false);
         setReviewDone(true);
     }
