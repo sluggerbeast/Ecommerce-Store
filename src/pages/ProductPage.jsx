@@ -131,7 +131,7 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
         onCartAdd={onCartAdd}
         cartList={cartList}
       />}
-      <Review rating={product.rating} reviews={product.comments} />
+      <Review id={product.id} rating={product.rating} reviews={product.comments} />
       
     </>
   );

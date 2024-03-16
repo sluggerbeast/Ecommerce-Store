@@ -19,7 +19,7 @@ function App() {
 
   const [productList, setProductList] = useState(initialList);
   const [cartList, setCartList] = useState([]);
-
+  const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     fetch("https://dummyjson.com/products?limit=100")
       .then((res) => res.json())
@@ -35,25 +35,25 @@ function App() {
             description: item.description,
             comments: [
               {
-                name: "Saurabh",
+                title: "Nice",
                 rating: 4.5,
                 review: "It is a great product",
                 userId: "Joe",
               },
               {
-                name: "Saurabh",
+                title: "Great",
                 rating: 3.5,
                 review: "It is a great product",
                 userId: "Amit",
               },
               {
-                name: "Saurabh",
+                title: "Could be better",
                 rating: 4.5,
                 review: "It is a great product",
                 userId: "Raj",
               },
               {
-                name: "Saurabh",
+                title: "Awesome",
                 rating: 5,
                 review: "It is a great product",
                 userId: "Anil",
@@ -73,6 +73,29 @@ function App() {
       return item;
     });
     return tot;
+  }
+
+  function handleSearch(searchText){
+      setSearchQuery(searchText)
+      console.log(searchQuery);
+  }
+
+
+  function handleReviews(id,prodComments){
+
+    console.log(prodComments);
+    setProductList(
+
+       productList.map((item)=>{
+        if(item.id===id){
+          return { ...item , comments: prodComments}
+        }else{
+          return item
+        }
+      })
+      
+    )
+    
   }
 
   function handleAddCart(
@@ -138,10 +161,10 @@ function App() {
   return (
     <>
       <totList.Provider
-        value={{ productList: productList, cartList: cartList,onCartEdit:handleCartEdit }}
+        value={{ productList: productList, cartList: cartList,onCartEdit:handleCartEdit, onReviewAdd:handleReviews }}
       >
         <div>
-          <NavBar cartSize={getTotalCartItems} CartRef={CartRef} />
+          <NavBar onSearch={handleSearch} cartSize={getTotalCartItems} CartRef={CartRef} />
           <Cart ref={CartRef} onCartEdit={handleCartEdit} cartList={cartList} />
         </div>
         <Routes>
