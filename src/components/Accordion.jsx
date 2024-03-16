@@ -16,7 +16,7 @@ function AccordionItem({ title, content }) {
         onClick={toggleAccordion}
         aria-expanded={isOpen}
       >
-       <div className="w-full border-black border-t-2"><span >{title} 
+       <div className="w-full border-black border-t-2 text-[20px]"><span >{title} 
        {isOpen ? 
              <span class="fa fa-angle-up" />
            : 
