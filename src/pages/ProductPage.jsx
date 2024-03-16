@@ -119,7 +119,7 @@ function ProductPage({ onCartEdit, cartList, onCartAdd }) {
             </button> */}
             <AddToCartBtn id={prodid} animate={true} btnText="Add to Cart" onCartEdit={onCartEdit}  className="bg-black text-white p-2 w-[200px] mb-4"/>
             
-          <Accordion items={[{title:"Description ",content:product.description},{title:"Description ",content:product.description}]} /> 
+          <Accordion items={[{title:"Description ",content:product.description},{title:"More Info",content:product.description}]} /> 
           </div>
           {/* Description of the prodcut below */}
           

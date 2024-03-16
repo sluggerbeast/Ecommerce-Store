@@ -34,12 +34,12 @@ function Account() {
           <h3 className="text-lg font-medium mb-2">Profile Information</h3>
           <p>Name: {userData.name}</p>
           <p>Email: {userData.email}</p>
-          <button className="btn bg-black text-white p-2 rounded-md mt-4">Edit Profile</button>
+          <button onClick={()=>{navigate('/profile')}} className="btn bg-black text-white p-2 rounded-md mt-4">Edit Profile</button>
         </div>
         <div className="bg-gray-100 rounded-lg shadow-md p-4">
           <h3 className="text-lg font-medium mb-2">Order History</h3>
           <p>View your past orders and track their status.</p>
-          <button className="btn  bg-black text-white p-2 rounded-md mt-4">View Orders</button>
+          <button onClick={()=>{navigate('/orders')}} className="btn  bg-black text-white p-2 rounded-md mt-4">View Orders</button>
         </div>
         <div className="bg-gray-100 rounded-lg shadow-md p-4">
           <h3 className="text-lg font-medium mb-2">Payment Methods</h3>

@@ -11,6 +11,7 @@ import ProductPage from "./pages/ProductPage.jsx";
 import Cart from "./components/Cart.jsx";
 import Account from "./pages/Account.jsx";
 import ComingSoon from "./pages/ComingSoon.jsx";
+import Auth from "./components/Auth.jsx";
 export const totList = createContext();
 
 function App() {
@@ -37,25 +38,25 @@ function App() {
                 name: "Saurabh",
                 rating: 4.5,
                 review: "It is a great product",
-                userId: "",
+                userId: "Joe",
               },
               {
                 name: "Saurabh",
                 rating: 3.5,
                 review: "It is a great product",
-                userId: "",
+                userId: "Amit",
               },
               {
                 name: "Saurabh",
                 rating: 4.5,
                 review: "It is a great product",
-                userId: "",
+                userId: "Raj",
               },
               {
                 name: "Saurabh",
                 rating: 5,
                 review: "It is a great product",
-                userId: "",
+                userId: "Anil",
               },
             ],
             images: [...item.images],
@@ -166,7 +167,7 @@ function App() {
               />
             }
           />
-          <Route path="/account" element={<Account />} />
+          <Route path="/account" element={<Auth ><Account /></Auth>} />
           <Route
             path="/products/:prodid"
             element={
