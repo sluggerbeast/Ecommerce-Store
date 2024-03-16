@@ -40,10 +40,12 @@ function Accordion({ items }) {
   return (
     
         <>
+        <div className='w-full'>
       {items.map((item) => (
         <AccordionItem key={item.title} title={item.title} content={item.content} />
       ))}
       <hr className='w-full ml-1  border-black border-t-2'/>
+      </div>
     </>
   );
 }

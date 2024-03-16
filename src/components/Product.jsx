@@ -53,6 +53,7 @@ function Product({
               className="hover:scale-105 max-w-[300px]"
               src={imgLink}
               alt="product Image"
+              loading="lazy"
             />
           </div>
 
