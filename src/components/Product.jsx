@@ -47,7 +47,7 @@ function Product({
     <>
       <div className="p-3 m-5 bg-slate-100 h-fit max-w-[350px]  lg:h-[70vh] w-fit rounded ">
         <div onClick={handleProductClick}>
-          <p>{id}</p>
+          
           <div className="w-[300px] h-[300px] bg-white overflow-hidden">
             <img
               width="300px"
