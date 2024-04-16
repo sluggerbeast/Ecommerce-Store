@@ -60,7 +60,7 @@ function NavBar({cartSize,CartRef,onSearch}) {
         <ul class="flex space-x-4 px-2">
           <li className="hidden sm:block">
             <Link to="/" class="hover:text-gray-400">
-              Page
+              Home
             </Link>
           </li>
           <li>
@@ -81,7 +81,7 @@ function NavBar({cartSize,CartRef,onSearch}) {
         
       </nav>
       <nav className="bg-gray-100 h-[60px] text-white  w-full"></nav>
-      <div className="w-full flex flex-col items-center justify-center fixed z-5">
+      <div className="w-full flex flex-col items-center justify-center fixed z-30 ">
         {searchQuery&& <SearchBox onSearchClick={handleSearchClick} searchResult={searchResult}  />}
         </div>
       

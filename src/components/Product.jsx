@@ -12,7 +12,8 @@ function Product({
   id,
   cartList,
   onCartEdit,
-  rating
+  rating,
+  imageList
 }) {
   const navigate = useNavigate();
   const [cartBtnText,  setCartBtnText] = useState("Add to Cart");
@@ -48,14 +49,17 @@ function Product({
       <div className="p-3 m-5 bg-slate-100 h-fit max-w-[350px]  lg:h-[70vh] w-fit rounded ">
         <div onClick={handleProductClick}>
           
-          <div className="w-[300px] h-[300px] bg-white overflow-hidden">
+          <div 
+            style={{backgroundImage:`${imageList[imageList.length>=2?1:imageList.length-1]}`}}
+          className="relative w-[300px] h-[300px] bg-white overflow-hidden z-0">
             <img
               width="300px"
-              className="hover:scale-105 max-w-[300px]"
-              src={imgLink}
+              className="hover:scale-105 absolute top-0 left-0 w-full h-full object-cover z-10"
+              src={imageList[imageList.length>=2?1:imageList.length-1]}
               alt="product Image"
               loading="lazy"
             />
+            {/* <BlurredImage imageUrl={imageList[imageList.length>=2?1:imageList.length-1]} altText="something went wrong" /> */}
           </div>
 
           <span className="ml-1 text-xl font-bold text-wrap">{productName}</span>
@@ -79,6 +83,21 @@ function Product({
   );
 }
 
+
+const BlurredImage = ({ imageUrl, altText, width = 'w-full', height = 'h-full' }) => {
+  return (
+    <div className={`relative ${width} ${height}`}>
+      <img
+        src={imageUrl}
+        alt={altText}
+        className="absolute top-0 left-0 w-full h-full object-cover z-10"
+      />
+      <div
+        className={`absolute top-0 left-0 w-full h-full bg-gray-900 opacity-25 filter blur-md z-0`}
+      />
+    </div>
+  );
+};
 
 
 

@@ -10,7 +10,7 @@ export default function HomePage({onCart,productList,cartList,onCartEdit}){
     <Hero />
     <div className='flex flex-wrap justify-center lg:justify-start w-full px-4 bg-slate-50 min-h-screen h-fit pt-[10px]' >
     {productList.map((prod)=>(
-      <Product key={prod.id} onCartEdit={onCartEdit} price={prod.price} productName={prod.productName} imgLink={prod.imgLink} id={prod.id} onCartAdd={onCart} cartList={cartList} rating={prod.rating} />
+      <Product key={prod.id} onCartEdit={onCartEdit} price={prod.price} productName={prod.productName} imgLink={prod.imgLink} id={prod.id} onCartAdd={onCart} cartList={cartList} rating={prod.rating} imageList={prod.images} />
     ))}
     </div>
     

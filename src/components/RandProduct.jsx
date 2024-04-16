@@ -17,7 +17,7 @@ function RandProduct({onCartEdit,onCartAdd,cartList}) {
    <div className='text-center w-full bg-black text-white py-1'>People Also buy</div>
     <div className='border-black border-2 h-fit w-full flex flex-row overflow-x-scroll'>
     
-    {prod.map((prod)=><Product key={prod.id} onCartEdit={onCartEdit} price={prod.price} productName={prod.productName} imgLink={prod.imgLink} id={prod.id} onCartAdd={onCartAdd} cartList={cartList} rating={prod.rating} />)}
+    {prod.map((prod)=><Product key={prod.id} onCartEdit={onCartEdit} price={prod.price} productName={prod.productName} imgLink={prod.imgLink} id={prod.id} onCartAdd={onCartAdd} cartList={cartList} rating={prod.rating} imageList={prod.images} />)}
     </div>
     
     </>
