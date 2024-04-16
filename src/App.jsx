@@ -25,7 +25,7 @@ function App() {
       .then((res) => res.json())
       .then((res) => {
         setProductList(
-          res.products.map((item) => ({
+          res.products.filter((item)=>item.title!="iPhone 9").map((item) => ({
             id: parseInt(item.id),
             productName: item.title,
             price: parseInt(item.price)*80,
