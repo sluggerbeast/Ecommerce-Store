@@ -21,7 +21,7 @@ function App() {
   const [cartList, setCartList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=100")
+    fetch("https://dummyjson.com/products?limit=50")
       .then((res) => res.json())
       .then((res) => {
         setProductList(
