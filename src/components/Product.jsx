@@ -56,7 +56,7 @@ function Product({
               width="300px"
               className="hover:scale-105 absolute top-0 left-0 w-full h-full object-cover z-10"
               src={imageList[imageList.length>=2?1:imageList.length-1]}
-              alt="product Image"
+              alt="Image loading..."
               loading="lazy"
             />
             {/* <BlurredImage imageUrl={imageList[imageList.length>=2?1:imageList.length-1]} altText="something went wrong" /> */}
