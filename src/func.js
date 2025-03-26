@@ -50,9 +50,9 @@ const tell2 = {
    images:[
     
     "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-    "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-    "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-    "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+    "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+    "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+    "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
     
   ]
   }
@@ -122,8 +122,8 @@ const tell2 = {
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       "https://gs1datakart.org/upload/product_image/890600099/8906000991657/5d10b3e5e738d_f.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -145,8 +145,8 @@ const tell2 = {
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -168,8 +168,8 @@ const tell2 = {
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -191,8 +191,8 @@ const tell2 = {
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
       "https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -213,9 +213,9 @@ const tell2 = {
      images:[
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -236,9 +236,9 @@ const tell2 = {
      images:[
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -259,9 +259,9 @@ const tell2 = {
      images:[
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -282,9 +282,9 @@ const tell2 = {
      images:[
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -305,9 +305,9 @@ const tell2 = {
      images:[
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
@@ -328,9 +328,9 @@ const tell2 = {
      images:[
       
       "https://5.imimg.com/data5/KC/PC/MY-38629861/dummy-chronograph-watch.jpg",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 1",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 2",
-      "https://dummyjson.com/image/500x500/f000f0/dddddd?text=Product 3",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Loading...",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 2",
+      "https://dummyjson.com/image/500x500/dddddd/000000?text=Product 3",
       
     ]
     },
