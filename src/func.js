@@ -58,28 +58,6 @@ const tell2 = {
   }
 
   export const initialList = [
-    {
-      id: 1,
-      productName: "Echo Dot 3rd Gen",
-      price: "2200",
-      imgLink:
-        "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      category: "echo",
-      rating:4.6,
-      comments:[
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 3.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 4.5, review:"It is a great product",userId:""},
-        {name: "Saurabh", rating: 5, review:"It is a great product",userId:""},
-     ],
-     images:[
-      
-      "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      "https://m.media-amazon.com/images/I/81WaomQESKL._AC_UY327_QL65_.jpg",
-      
-    ]
-    }
+    
   ];
 
